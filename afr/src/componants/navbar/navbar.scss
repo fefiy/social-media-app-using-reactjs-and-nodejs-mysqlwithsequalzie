@@ -1,0 +1,143 @@
+
+@import "../../style.scss";
+
+.navbar {
+  @include themify($themes) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+    height: 70px;
+    height: 50px;
+    height: 70px;
+    border-bottom: 1px solid themed("border");
+    position: sticky;
+    top: 0;
+    background-color: themed("bg");
+    color:themed("textColor");
+    z-index: 999;
+
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      span {
+        font-weight: bold;
+        font-size: 20px;
+        color: themed("logo");
+      }
+
+      .search {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid themed("border");
+        border-radius: 5px;
+        padding: 5px;
+
+        input {
+          border: none;
+          width: 500px;
+          background-color: transparent;
+          color: themed("textColor");
+
+          @include mobile{
+            display: none;
+          }
+
+          @include tablet{
+            width: 200px;
+          }
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      @include mobile{
+        display: none;
+      }
+
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 500;
+
+        @include tablet{
+          display: none;
+        }
+
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        // span {
+        // }
+      }
+    }
+  }
+}
+
+
+// .navbar {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   padding: 10px 20px;
+//   border-bottom: 1px solid lightgray;
+//   box-shadow: 0px 1px 1.1px rgba(34, 45, 67, 0.3);
+//   position: sticky;
+//   top: 0;
+//   background-color: white;
+//   .left {
+//     display: flex;
+//     align-items: center;
+//     gap: 20px;
+//     span {
+//       font-weight: bold;
+//       color: darkblue;
+//       font-size: 21px;
+//     }
+//     .search {
+//       display: flex;
+//       align-items: center;
+//       border: 1px solid lightgray;
+//       gap: 10px;
+//       border-radius: 5px;
+//       padding: 4px;
+//       input {
+//         border: none;
+//         padding: 6px;
+//       }
+//     }
+//   }
+
+//   .right {
+//     display: flex;
+//     align-items: center;
+//     gap: 20px;
+
+//     .user {
+//       display: flex;
+//       align-items: center;
+//       gap: 10px;
+//       img {
+//         width: 30px;
+//         height: 30px;
+//         border-radius: 50%;
+//         object-fit: cover;
+//       }
+//       span {
+//         font-weight: 500;
+//       }
+//     }
+//   }
+// }
