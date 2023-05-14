@@ -24,8 +24,7 @@ import { QueryClient, QueryClientProvider} from '@tanstack/react-query'
 function App() {
  const [isTokenValid, setIsTokenValid] = useState(false)
   const {currentUser } = useContext(AuthContext)
-const aceesscookie = Cookies.get("accessToken")
-console.log(aceesscookie)
+// const aceesscookie = Cookies.get("accessToken")
 useEffect(()=>{
   
 })
@@ -71,7 +70,7 @@ const queryClient = new QueryClient()
   };
 
   const ProtectedRoue = ({ children }) => {
-    if (!currentUser) {
+    if (!currentUser || !isTokenValid ) {
       return <Navigate to="/login" />;
     }
     return children;
